@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adi Wahyudin ID</title>
+<link rel="icon" type="image/png" href="fotoadiw.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#161616;
+    --bg-soft:#1f1f1f;
+    --card-dark:#232323;
+    --card-dark-alt:#2b2b2b;
+    --card-light:#f1f0ec;
+    --card-light-alt:#e7e5df;
+    --white:#ffffff;
+    --ink:#141414;
+    --muted:#9a9a94;
+    --muted-2:#6f6f68;
+    --line:rgba(255,255,255,.09);
+    --radius-xl:34px;
+    --radius-lg:24px;
+    --radius-md:18px;
+    --radius-pill:999px;
+    --disp:'Space Grotesk', sans-serif;
+    --body:'Plus Jakarta Sans', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:var(--body);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:var(--disp);
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:17px;
+    color:var(--muted);
+  }
+  ::selection{background:var(--white);color:var(--ink);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    padding:18px 24px;
+  }
+  .nav-inner{
+    max-width:1180px;margin:0 auto;
+    background:rgba(35,35,35,.72);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--line);
+    border-radius:var(--radius-pill);
+    padding:12px 14px 12px 26px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;
+  }
+  .logo{
+    font-family:var(--disp);
+    font-weight:700;
+    font-size:27px;
+    letter-spacing:.02em;
+    display:flex;align-items:center;gap:8px;
+  }
+  .logo span{
+    background:var(--white);color:var(--ink);
+    border-radius:8px;padding:6px 10px;font-size:20px;
+  }
+  nav.links{
+    display:flex;align-items:center;gap:34px;
+    font-size:20px;font-weight:500;
+  }
+  nav.links a{
+    position:relative;color:var(--muted);transition:color .25s;
+  }
+  nav.links a.active,nav.links a:hover{color:var(--white);}
+  nav.links a.active::after{
+    content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--white);border-radius:2px;
+  }
+  .nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .nav-cta{
+    background:var(--white);color:var(--ink);
+    font-weight:700;font-size:19px;
+    padding:11px 22px;border-radius:var(--radius-pill);
+    white-space:nowrap;
+    transition:transform .2s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px);}
+  .burger{display:none;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);align-items:center;justify-content:center;flex-shrink:0;}
+  .burger span,.burger span::before,.burger span::after{
+    content:"";display:block;width:16px;height:2px;background:var(--white);position:relative;transition:.25s;
+  }
+  .burger span::before{position:absolute;top:-5px;}
+  .burger span::after{position:absolute;top:5px;}
+  .mobile-menu{
+    display:none;flex-direction:column;gap:2px;
+    max-width:1180px;margin:0 auto;
+    background:rgba(35,35,35,.95);border:1px solid transparent;border-radius:22px;
+    padding:0 10px;overflow:hidden;max-height:0;opacity:0;
+    transition:max-height .3s ease, opacity .25s ease, padding .3s ease, margin .3s ease, border-color .3s ease;
+  }
+  .mobile-menu.open{max-height:320px;opacity:1;padding:14px;margin:8px auto 0;border-color:var(--line);}
+  .mobile-menu a{padding:12px 14px;border-radius:12px;font-weight:600;color:var(--muted);}
+  .mobile-menu a:hover{background:rgba(255,255,255,.06);color:var(--white);}
+
+  /* ---------- HERO ---------- */
+  .hero-section{padding:14px 24px 24px;}
+  .hero{
+    max-width:1180px;margin:0 auto;
+    background:radial-gradient(circle at 85% 8%, #262626 0%, var(--bg-soft) 45%, #1a1a1a 100%);
+    border:1px solid var(--line);
+    border-radius:var(--radius-xl);
+    padding:80px 56px 70px;
+    position:relative;overflow:hidden;
+    display:grid;grid-template-columns:340px 1fr;gap:50px;align-items:center;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:26px 26px;
+    mask-image:radial-gradient(circle at 75% 20%, black, transparent 60%);
+    pointer-events:none;
+  }
+  /* Lanyard badge */
+  .badge-stage{position:relative;height:420px;display:flex;justify-content:center;z-index:1;}
+  .lanyard-clip{
+    width:46px;height:20px;background:linear-gradient(180deg,#3a3a3a,#1c1c1c);
+    border-radius:5px;margin:0 auto;position:relative;z-index:3;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--disp);font-size:12.5px;font-weight:700;letter-spacing:.05em;color:var(--muted);
+    box-shadow:0 3px 6px rgba(0,0,0,.4);
+  }
+  .lanyard-string{
+    width:2px;height:34px;background:linear-gradient(#4a4a4a,#2a2a2a);margin:0 auto;
+  }
+  .badge-swing{
+    transform-origin:top center;
+    animation:swing 6s ease-in-out infinite;
+  }
+  @keyframes swing{
+    0%,100%{transform:rotate(-2.2deg);}
+    50%{transform:rotate(2.2deg);}
+  }
+  .badge-card{
+    width:250px;background:var(--card-light);border-radius:20px;
+    padding:14px 14px 20px;margin:0 auto;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
+    position:relative;
+  }
+  .badge-photo{
+    width:100%;aspect-ratio:1/1.05;border-radius:14px;
+    background:
+      radial-gradient(circle at 50% 30%, #4c4c52 0%, #2c2c30 60%),
+      linear-gradient(160deg,#3a3a40,#19191c);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;position:relative;
+  }
+  .badge-photo .mono{
+    font-family:var(--disp);font-weight:700;font-size:86.5px;color:rgba(255,255,255,.85);
+    letter-spacing:-.02em;
+  }
+  .badge-tag{
+    position:absolute;top:10px;left:10px;background:var(--ink);color:var(--white);
+    font-family:var(--disp);font-size:13.5px;font-weight:700;padding:3px 8px;border-radius:6px;
+  }
+  .badge-caption{
+    font-family:'Segoe Script','Brush Script MT',cursive;
+    font-size:34px;color:var(--ink);margin-top:12px;text-align:center;
+    white-space:nowrap;overflow:hidden;text-overflow:clip;
+  }
+
+  .hero-copy .hello{
+    font-size:26px;color:var(--muted);margin-bottom:6px;
+  }
+  .hero-copy .hello b{color:var(--white);font-weight:700;}
+  .hero-copy h1{
+    font-family:var(--disp);
+    font-weight:700;
+    font-size:clamp(51.5px,7.3vw,92px);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin-bottom:26px;
+  }
+  .hero-socials{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:30px;}
+  .hero-social{
+    width:50px;height:50px;border-radius:30%;flex-shrink:0;
+    background:var(--card-dark-alt);border:1px solid var(--line);color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    transition:.22s ease;
+  }
+  .hero-social svg{width:19px;height:19px;}
+  .hero-social:hover{background:var(--white);color:var(--ink);transform:translateY(-3px);}
+  .hero-copy p{
+    color:var(--muted);font-size:22.5px;line-height:1.65;max-width:480px;margin-bottom:34px;
+  }
+  .btn-pill{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--white);color:var(--ink);
+    font-weight:700;font-size:20px;
+    padding:16px 26px;border-radius:var(--radius-pill);
+    transition:transform .22s ease, box-shadow .22s ease;
+  }
+  .btn-pill:hover{transform:translateY(-3px);box-shadow:0 14px 26px -10px rgba(255,255,255,.25);}
+  .btn-pill svg{width:16px;height:16px;}
+  .btn-pill.dark{background:var(--card-dark-alt);color:var(--white);border:1px solid var(--line);}
+
+  /* ---------- SECTION LABEL COMMON ---------- */
+  section{padding:110px 24px;}
+  .section-inner{max-width:1180px;margin:0 auto;}
+
+  /* ---------- PORTFOLIO ---------- */
+  #portofolio{padding-top:60px;}
+  .portfolio-grid{
+    display:grid;grid-template-columns:320px 1fr;gap:60px;align-items:center;
+  }
+  .phone{
+    width:280px;background:#0e0e0e;border:8px solid #0e0e0e;border-radius:42px;
+    box-shadow:0 40px 70px -30px rgba(0,0,0,.7), inset 0 0 0 2px rgba(255,255,255,.06);
+    overflow:hidden;
+  }
+  .phone-notch{height:24px;display:flex;align-items:center;justify-content:center;}
+  .phone-notch::after{content:"";width:60px;height:6px;background:#000;border-radius:6px;}
+  .phone-screen{background:var(--bg-soft);padding:14px 16px 20px;}
+  .phone-profile{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .phone-avatar{
+    width:46px;height:46px;border-radius:50%;
+    background:linear-gradient(135deg,#5a5a5a,#232323);
+    display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:12px;
+  }
+  .phone-handle{font-weight:700;font-size:17.5px;}
+  .phone-sub{font-size:14px;color:var(--muted);}
+  .phone-stats{display:flex;gap:16px;font-size:15px;color:var(--muted);margin-bottom:14px;}
+  .phone-stats b{color:var(--white);display:block;font-size:17.5px;}
+  .phone-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+  .phone-grid div{aspect-ratio:0.9;border-radius:3px;}
+  .phone-grid div:nth-child(1){background:linear-gradient(140deg,#8f8f88,#3c3c38);}
+  .phone-grid div:nth-child(2){background:linear-gradient(140deg,#5c6b74,#22282b);}
+  .phone-grid div:nth-child(3){background:linear-gradient(140deg,#7a6a55,#2a2420);}
+  .phone-grid div:nth-child(4){background:linear-gradient(140deg,#556,#1c1c22);}
+  .phone-grid div:nth-child(5){background:linear-gradient(140deg,#726d5f,#26241d);}
+  .phone-grid div:nth-child(6){background:linear-gradient(140deg,#4c5750,#1a201c);}
+  .phone-grid div:nth-child(7){background:linear-gradient(140deg,#6a5a63,#241f22);}
+  .phone-grid div:nth-child(8){background:linear-gradient(140deg,#5f6a4f,#20241a);}
+  .phone-grid div:nth-child(9){background:linear-gradient(140deg,#7d746a,#2a2620);}
+  .phone-grid div:nth-child(10){background:linear-gradient(140deg,#7d746a,#2a2620);}
+  .phone-grid div:nth-child(11){background:linear-gradient(140deg,#7d746a,#2a2620);}
+  .phone-grid div:nth-child(12){background:linear-gradient(140deg,#7d746a,#2a2620);}
+
+  .portfolio-right h2{
+    font-family:var(--disp);font-size:clamp(38px,4.6vw,54.5px);font-weight:700;margin-bottom:22px;
+  }
+  .tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px;}
+  .tab{
+    padding:11px 20px;border-radius:var(--radius-pill);font-weight:600;font-size:19px;
+    background:var(--card-dark-alt);color:var(--muted);border:1px solid var(--line);
+    transition:.22s;
+  }
+  .tab.active{background:var(--white);color:var(--ink);}
+  .tab:hover:not(.active){color:var(--white);}
+
+  /* Coverflow slider */
+  .coverflow-wrap{--cf-w:clamp(185px, 46vw, 300px);--cf-gap:calc(var(--cf-w) * 0.64);}
+  .coverflow{
+    position:relative;overflow:hidden;border-radius:22px;
+    width:calc(var(--cf-w) * 2 + 20px);
+    max-width:100%;
+    height:calc(var(--cf-w) * 1.25 + 30px);
+  }
+  .cf-slot{
+    position:absolute;top:50%;left:50%;width:var(--cf-w);aspect-ratio:4/5;
+    border-radius:20px;overflow:hidden;background-size:cover;background-position:center;
+    box-shadow:0 25px 45px -16px rgba(0,0,0,.55);
+    transition:transform .5s cubic-bezier(.65,0,.35,1), opacity .5s ease, filter .5s ease;
+  }
+  .cf-slot::before{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(0deg, rgba(10,10,10,.85) 0%, rgba(10,10,10,.1) 45%, transparent 68%);
+  }
+  .cf-img{width:100%;height:100%;object-fit:cover;display:block;}
+  .cf-slot.center{transform:translate(-50%,-50%) scale(1);z-index:3;opacity:1;filter:none;cursor:zoom-in;}
+  .cf-slot.left{transform:translate(calc(-50% - var(--cf-gap)),-50%) scale(.8);z-index:2;opacity:.5;filter:brightness(.5) saturate(.75);cursor:pointer;}
+  .cf-slot.right{transform:translate(calc(-50% + var(--cf-gap)),-50%) scale(.8);z-index:2;opacity:.5;filter:brightness(.5) saturate(.75);cursor:pointer;}
+  .cf-info{position:absolute;left:calc(var(--cf-w) * 0.09);right:calc(var(--cf-w) * 0.09);bottom:calc(var(--cf-w) * 0.08);z-index:1;opacity:0;transition:opacity .3s ease .12s;}
+  .cf-slot.center .cf-info{opacity:1;}
+  .cf-info .cat{font-family:var(--disp);font-weight:700;font-size:calc(var(--cf-w) * 0.104);line-height:1.15;color:#fff;display:block;}
+  .cf-info small{display:block;color:rgba(255,255,255,.6);font-size:calc(var(--cf-w) * 0.068);line-height:1.3;margin-top:calc(var(--cf-w) * 0.025);}
+  .cf-arrow{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:38px;height:38px;border-radius:50%;z-index:4;
+    background:rgba(20,20,20,.6);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px);
+    display:flex;align-items:center;justify-content:center;color:#fff;transition:.2s;
+  }
+  .cf-arrow:hover{background:#fff;color:var(--ink);}
+  .cf-arrow svg{width:15px;height:15px;}
+  .cf-prev{left:calc(50% - var(--cf-w) / 2 + 10px);}
+  .cf-next{left:calc(50% + var(--cf-w) / 2 - 48px);}
+  .portfolio-foot{margin-top:26px;color:var(--muted);font-size:20px;}
+  .portfolio-foot b{color:var(--white);}
+
+  /* ---------- PRICING ---------- */
+  #prices{
+    background:var(--card-light);color:var(--ink);
+    border-radius:var(--radius-xl);
+    max-width:1180px;margin:0 auto 40px;
+    padding:90px 56px;
+  }
+  .prices-head{text-align:center;margin-bottom:56px;}
+  .prices-head h2{
+    font-family:var(--disp);font-weight:700;font-size:clamp(46px,6.8vw,76px);
+    display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;
+  }
+  .prices-head h2 .box{
+    background:var(--ink);color:var(--white);padding:2px 18px;border-radius:14px;
+  }
+  .prices-head p{margin-top:14px;font-weight:600;color:var(--muted-2);font-size:22px;}
+  .price-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+  .price-card{
+    border-radius:26px;padding:34px 30px 38px;position:relative;
+    display:flex;flex-direction:column;
+  }
+  .price-card.light{background:var(--card-light-alt);color:var(--ink);}
+  .price-card.dark{background:var(--ink);color:var(--white);transform:translateY(-14px);}
+  .price-badge{
+    position:absolute;top:30px;right:28px;background:rgba(255,255,255,.15);color:var(--white);
+    font-size:16.5px;font-weight:700;padding:6px 14px;border-radius:var(--radius-pill);
+  }
+  .price-card .plogo{font-family:var(--disp);font-weight:700;font-size:19px;opacity:.55;margin-bottom:18px;}
+  .price-card h3{font-family:var(--disp);font-weight:700;font-size:46px;margin-bottom:16px;}
+  .price-old{font-size:19px;text-decoration:line-through;opacity:.5;}
+  .price-new{font-family:var(--disp);font-weight:700;font-size:40.5px;}
+  .price-new span{font-size:19px;font-weight:600;opacity:.65;font-family:var(--body);}
+  .price-card .order-btn{
+    margin:22px 0 26px;text-align:center;font-weight:700;font-size:19.5px;
+    padding:14px;border-radius:var(--radius-pill);background:var(--white);color:var(--ink);
+    transition:transform .2s;
+  }
+  .price-card.light .order-btn{background:var(--ink);color:var(--white);}
+  .price-card .order-btn:hover{transform:translateY(-2px);}
+  .price-card .spec-title{font-weight:700;font-size:19px;margin-bottom:12px;}
+  .price-card ul{display:flex;flex-direction:column;gap:10px;font-size:19px;line-height:1.5;}
+  .price-card ul li{display:flex;gap:8px;}
+  .price-card ul li svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;}
+
+  /* ---------- ORDER / CONTACT ---------- */
+  #order{padding-top:40px;}
+  .order-left{max-width:640px;margin:0 auto;text-align:center;}
+  .order-left .eyebrow-lg{
+    font-family:var(--disp);font-size:clamp(40.5px,6.3vw,71px);color:var(--muted);font-weight:600;
+  }
+  .order-left h2{
+    font-family:var(--disp);font-weight:700;font-size:clamp(62.5px,9.4vw,117px);line-height:.98;margin-bottom:36px;
+  }
+  .order-icons{display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap;justify-content:center;}
+  .order-icon{
+    width:158px;height:150px;border-radius:34px;background:var(--card-dark-alt);border:1px solid var(--line);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+    transition:.25s;
+  }
+  .order-icon:hover{background:var(--white);color:var(--ink);transform:translateY(-4px);}
+  .order-icon svg{width:76px;height:76px;}
+  .order-icon span{font-size:17.5px;font-weight:700;}
+  .order-hint{color:var(--muted);font-size:17.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:100px 24px 40px;}
+  .footer-inner{max-width:1180px;margin:0 auto;}
+  .footer-top{
+    display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;
+    padding-bottom:60px;border-bottom:1px solid var(--line);
+  }
+  .tool-icons{display:flex;gap:10px;margin-bottom:22px;}
+  .tool-icons .app-icon{
+    width:44px;height:44px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--disp);font-weight:700;font-size:20px;color:#fff;
+    box-shadow:0 6px 14px -6px rgba(0,0,0,.5);
+  }
+  .app-ps{background:linear-gradient(160deg,#34c3ff 0%,#001e36 70%);}
+  .app-ai{background:linear-gradient(160deg,#ff9a3c 0%,#330000 70%);}
+  .app-pr{background:linear-gradient(160deg,#a68bff 0%,#00005b 70%);}
+  .footer-tagline{color:var(--muted);font-size:19.5px;line-height:1.6;max-width:320px;}
+  .footer-col h4{font-family:var(--disp);font-weight:700;font-size:20px;margin-bottom:18px;}
+  .footer-col a{display:block;color:var(--muted);font-size:19.5px;margin-bottom:12px;transition:color .2s;}
+  .footer-col a:hover{color:var(--white);}
+  .footer-bottom{padding-top:30px;text-align:center;color:var(--muted-2);font-size:18.5px;}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:.001;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.show{opacity:1;transform:translateY(0);}
+  .no-js .reveal{opacity:1;transform:none;}
+
+  @media (prefers-reduced-motion:reduce){
+    .badge-swing{animation:none !important;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:920px){
+    nav.links{display:none;}
+    .burger{display:flex;}
+    .mobile-menu{display:flex;}
+    .logo{font-size:23px;}
+    .nav-cta{padding:10px 16px;font-size:17.5px;}
+    .hero{grid-template-columns:1fr;padding:60px 30px 50px;text-align:center;}
+    .badge-stage{margin:0 auto;}
+    .hero-copy p{margin-left:auto;margin-right:auto;}
+    .hero-socials{justify-content:center;}
+    .portfolio-grid{grid-template-columns:1fr;}
+    .phone{margin:0 auto;}
+    #prices{padding:60px 26px;}
+    .price-cards{grid-template-columns:1fr;}
+    .price-card.dark{transform:none;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .wrap,section{padding-left:18px;padding-right:18px;}
+    .hero{padding:50px 22px 40px;}
+    .footer-top{grid-template-columns:1fr;}
+    .nav-cta{padding:9px 13px;font-size:16.5px;}
+    .nav-actions{gap:8px;}
+    /* coverflow size now fluid via clamp() in base rule */
+  }
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed;inset:0;z-index:999;padding:40px 24px;
+    background:rgba(10,10,10,.92);backdrop-filter:blur(6px);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;transition:opacity .3s ease;
+  }
+  .lightbox.open{opacity:1;pointer-events:all;}
+  .lightbox-figure{
+    max-width:min(92vw,560px);margin:0;text-align:center;
+    transform:scale(.92);transition:transform .3s ease;
+  }
+  .lightbox.open .lightbox-figure{transform:scale(1);}
+  .lightbox-figure img{
+    width:100%;border-radius:24px;display:block;
+    box-shadow:0 40px 90px -20px rgba(0,0,0,.7);
+  }
+  .lightbox-figure figcaption{margin-top:20px;color:#fff;}
+  .lightbox-figure figcaption span{font-family:var(--disp);font-weight:700;font-size:23px;display:block;}
+  .lightbox-figure figcaption small{display:block;color:var(--muted);font-size:16.5px;margin-top:5px;}
+  .lightbox-close{
+    position:absolute;top:26px;right:26px;width:48px;height:48px;border-radius:50%;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;
+    display:flex;align-items:center;justify-content:center;transition:.2s;
+  }
+  .lightbox-close svg{width:19px;height:19px;}
+  .lightbox-close:hover{background:#fff;color:var(--ink);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="logo"><img src="fotoadiw.png" alt="AWID" width="50" height="50"></div>
+    <nav class="links">
+      <a href="#home" class="active">Beranda</a>
+      <a href="#portofolio">Portofolio</a>
+      <a href="#prices">Harga</a>
+      <a href="#order">Pesan</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://www.instagram.com/adiwahyudinid" class="nav-cta" target="_blank" rel="noopener noreferrer">@adiwahyudinid</a>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Beranda</a>
+    <a href="#portofolio">Portofolio</a>
+    <a href="#prices">Harga</a>
+    <a href="#order">Pesan</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-section" id="home">
+  <div class="hero">
+    <div class="badge-stage">
+      <div class="badge-swing">
+        <div class="lanyard-clip">AWID</div>
+        <div class="lanyard-string"></div>
+        <div class="badge-card">
+          <div class="badge-photo">
+            <span class="badge-tag">AWID</span>
+            <span class="mono">
+              <img src="fotoadi.jpg" alt="AWID" width="100%" height="100%">
+            </span>
+          </div>
+          <div class="badge-caption">Freelancer</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-copy">
+      <p class="hello">Halo! Saya <b>Adi</b></p>
+      <h1>Desainer Grafis.</h1>
+      <div class="hero-socials">
+        <a href="mailto:kontak.adiwahyudin@gmail.com" class="hero-social" aria-label="Email" target="_blank" rel="noopener noreferrer">
+          <img src="Mail.png" alt="AWID" width="100%" height="100%">
+        </a>
+        <a href="https://www.linkedin.com/in/adiwahyudinid" class="hero-social" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <img src="linkedin.png" alt="AWID" width="100%" height="100%">
+        </a>
+        <a href="https://www.instagram.com/adiwahyudinid" class="hero-social" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <img src="instagram.png" alt="AWID" width="100%" height="100%">
+        </a>
+        <a href="https://www.tiktok.com/@adiwahyudinid" class="hero-social" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <img src="tiktok.png" alt="AWID" width="100%" height="100%">
+        </a>
+        <a href="https://www.youtube.com/@adiwahyudinid" class="hero-social" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <img src="youtube.png" alt="AWID" width="100%" height="100%">
+        </a>
+        <a href="https://www.dribbble.com/adiwahyudinid" class="hero-social" aria-label="Dribbble" target="_blank" rel="noopener noreferrer">
+          <img src="dribbble.png" alt="AWID" width="100%" height="100%">
+        </a>
+        <a href="https://www.behance.com/adiwahyudinid" class="hero-social" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+          <img src="behance.png" alt="AWID" width="100%" height="100%">
+        </a>
+        <a href="https://www.x.com/adiwahyudinid" class="hero-social" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+          <img src="x.png" alt="AWID" width="100%" height="100%">
+        </a>
+      </div>
+      <p>Seorang Freelancer Desain Grafis. Dengan keahlian Photoshop, bekerja keras dan berdedikasi menciptakan karya visual modern untuk membantu konten kreator dan bisnis dalam menonjolkan identitas untuk mencapai keberhasilan.</p>
+      <a href="#portofolio" class="btn-pill">Portofolio
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portofolio">
+  <div class="section-inner portfolio-grid">
+    <div class="phone reveal">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-profile">
+          <div class="phone-avatar"><img src="fotoadiw.png" alt="AWID" width="100%" height="100%"></div>
+          <div>
+            <div class="phone-handle">adiwahyudinid</div>
+            <div class="phone-sub">Desainer Grafis</div>
+          </div>
+        </div>
+        <div class="phone-stats">
+          <div><b>2</b>kiriman</div>
+          <div><b>8</b>pengikut</div>
+          <div><b>97</b>diikuti</div>
+        </div>
+        <div class="phone-grid">
+          <div><img src="fotoadi.jpg" alt="AWID" width="100%" height="100%"></div><div><img src="fotoadi.jpg" alt="AWID" width="100%" height="100%"></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-right reveal">
+      <h2>Portofolio Desain</h2>
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-cat="Konten_Media_Sosial">Konten Media Sosial</button>
+        <button class="tab" data-cat="Thumbnail_Youtube">Thumbnail Youtube</button>
+        <button class="tab" data-cat="Poster">Poster</button>
+      </div>
+
+      <div class="coverflow-wrap">
+        <div class="coverflow" id="coverflow">
+          <div class="cf-slot left" id="cfLeft"><img class="cf-img" id="cfLeftImg" src="portfolio-images/01-produk-sneakers.jpg" alt=""></div>
+          <div class="cf-slot center" id="cfCenter">
+            <img class="cf-img" id="cfCenterImg" src="portfolio-images/01-produk-sneakers.jpg" alt="">
+            <div class="cf-info"><span class="cat" id="cfTitle"></span><small id="cfTag"></small></div>
+          </div>
+          <div class="cf-slot right" id="cfRight"><img class="cf-img" id="cfRightImg" src="portfolio-images/01-produk-sneakers.jpg" alt=""></div>
+          <button class="cf-arrow cf-prev" id="prevBtn" aria-label="Sebelumnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="cf-arrow cf-next" id="nextBtn" aria-label="Berikutnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="portfolio-foot">Untuk portofolio lengkap, cek Instagram <b>@adiwahyudinid</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="padding-left:24px;padding-right:24px;">
+<div id="prices" class="reveal">
+  <div class="prices-head">
+    <h2>Paket <span class="box">Harga</span></h2>
+    <p>Pilih paket harga yang sesuai dengan kebutuhan Anda!</p>
+  </div>
+  <div class="price-cards">
+    <div class="price-card light">
+      <div class="plogo"><img src="fotoadiw.png" alt="AWID" width="35" height="35"></div>
+      <h3>Basic</h3>
+      <div class="price-old">Rp25K</div>
+      <div class="price-new">Rp20.000 <span>/Desain</span></div>
+      <a href="#order" class="order-btn">Pesan Sekarang</a>
+      <div class="spec-title">Spesifikasi:</div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>2x Revisi</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>Estimasi Pengerjaan 1–2 Hari</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>+Rp5.000 jika ingin pengerjaan lebih cepat</li>
+      </ul>
+    </div>
+
+    <div class="price-card dark">
+      <div class="price-badge">Populer</div>
+      <div class="plogo"><img src="fotoadiw.png" alt="AWID" width="35" height="35"></div>
+      <h3>Standard</h3>
+      <div class="price-old">Rp40K</div>
+      <div class="price-new">Rp30.000 <span>/Desain</span></div>
+      <a href="#order" class="order-btn">Pesan Sekarang</a>
+      <div class="spec-title">Spesifikasi:</div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>5x Revisi</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>Estimasi Pengerjaan 1–2 Hari</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>+Rp5.000 jika ingin pengerjaan lebih cepat</li>
+      </ul>
+    </div>
+
+    <div class="price-card light">
+      <div class="plogo"><img src="fotoadiw.png" alt="AWID" width="35" height="35"></div>
+      <h3>Premium</h3>
+      <div class="price-old">Rp70K</div>
+      <div class="price-new">Rp55.000 <span>/Desain</span></div>
+      <a href="#order" class="order-btn">Pesan Sekarang</a>
+      <div class="spec-title">Spesifikasi:</div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>Tanpa Batas revisi kecil (warna, teks, dll)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>Estimasi Pengerjaan 1–2 Hari</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>+Rp10.000 jika ingin pengerjaan lebih cepat</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ORDER / CONTACT -->
+<section id="order">
+  <div class="section-inner">
+    <div class="order-left reveal">
+      <div class="eyebrow-lg">Pesan?</div>
+      <h2>Hubungi Kami.</h2>
+      <div class="order-icons">
+        <a href="https://www.instagram.com/adiwahyudinid" class="order-icon" target="_blank" rel="noopener noreferrer">
+          <img src="instagram.png" alt="AWID" width="76" height="76">
+          <span>Instagram</span>
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=6285869104690&text=Halo+kak%2C+saya+ingin+order+desain+nih.&type=phone_number&app_absent=0" class="order-icon" target="_blank" rel="noopener noreferrer">
+          <img src="whatsapp.png" alt="AWID" width="76" height="76">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+      <p class="order-hint">Klik salah satu ikon untuk memulai pesanan</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="tool-icons">
+          <div class="app-icon app-ps"><img src="photoshop.png" alt="AWID" width="45" height="45"></div>
+        </div>
+        <p class="footer-tagline">Saya ahli dalam Photoshop - menghasilkan konten visual profesional.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tentang</h4>
+        <a href="#home">Beranda</a>
+        <a href="#portofolio">Portofolio</a>
+        <a href="#prices">Harga</a>
+        <a href="#order">Pesan</a>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <a href="#tabs">Konten Media Sosial</a>
+        <a href="#tabs">Thumbnail Youtube</a>
+        <a href="#tabs">Poster</a>
+      </div>
+      <div class="footer-col">
+        <h4>Media Sosial</h4>
+        <a href="https://www.instagram.com/adiwahyudinid" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://api.whatsapp.com/send/?phone=6285869104690&text=Halo+kak%2C+saya+ingin+order+desain+nih.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Adi Wahyudin ID. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Tutup">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <figure class="lightbox-figure">
+    <img id="lightboxImg" src="" alt="">
+    <figcaption>
+      <span id="lightboxTitle"></span>
+      <small id="lightboxTag"></small>
+    </figcaption>
+  </figure>
+</div>
+
+<script>
+  // Mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id], .hero-section[id]');
+  const navLinks = document.querySelectorAll('nav.links a');
+  let navLock = false;
+  let navLockTimer = null;
+  function setActiveNav(href){
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === href));
+  }
+  function lockNav(href){
+    setActiveNav(href);
+    navLock = true;
+    clearTimeout(navLockTimer);
+    navLockTimer = setTimeout(() => { navLock = false; }, 900);
+  }
+  navLinks.forEach(a => a.addEventListener('click', () => lockNav(a.getAttribute('href'))));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => lockNav(a.getAttribute('href'))));
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting && !navLock){
+        setActiveNav('#' + e.target.id);
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => spy.observe(s));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObs.observe(el));
+  // safety net: force-show anything the observer missed (e.g. slow devices, print/screenshot tools)
+  setTimeout(() => revealEls.forEach(el => el.classList.add('show')), 1200);
+
+  // Portfolio data (placeholder — ganti dengan karya asli)
+  const portfolioData = {
+    Konten_Media_Sosial: [
+      { title: 'Postingan Instagram', tag: '', img: 'fotoadi.jpg' },
+      { title: 'Korsel Instagram', tag: '', img: 'fotoadi.jpg' },
+      { title: 'Template Cerita', tag: '', img: 'fotoadi.jpg' },
+      { title: 'Konten Promosi', tag: '', img: 'fotoadi.jpg' },
+    ],
+    Thumbnail_Youtube: [
+      { title: 'Thumbnail Gaming', tag: '', img: 'fotoadi.jpg' },
+      { title: 'Thumbnail Edukasi', tag: '', img: 'fotoadi.jpg' },
+      { title: 'Thumbnail Vlog', tag: '', img: 'fotoadi.jpg' },
+    ],
+    Poster: [
+      { title: 'Poster Acara', tag: '', img: 'fotoadi.jpg' },
+      { title: 'Poster Seminar', tag: '', img: 'fotoadi.jpg' },
+      { title: 'Brosur Promosi', tag: '', img: 'fotoadi.jpg' },
+    ],
+  };
+
+  const cfLeft = document.getElementById('cfLeft');
+  const cfCenter = document.getElementById('cfCenter');
+  const cfRight = document.getElementById('cfRight');
+  const cfLeftImg = document.getElementById('cfLeftImg');
+  const cfCenterImg = document.getElementById('cfCenterImg');
+  const cfRightImg = document.getElementById('cfRightImg');
+  const cfTitle = document.getElementById('cfTitle');
+  const cfTag = document.getElementById('cfTag');
+  const tabs = document.querySelectorAll('.tab');
+  let current = 'Konten_Media_Sosial';
+  let index = 0;
+
+  function renderSlides(){
+    const len = portfolioData[current].length;
+    const li = (index - 1 + len) % len;
+    const ri = (index + 1) % len;
+    const l = portfolioData[current][li];
+    const c = portfolioData[current][index];
+    const r = portfolioData[current][ri];
+    cfLeftImg.src = l.img;
+    cfLeftImg.alt = l.title;
+    cfCenterImg.src = c.img;
+    cfCenterImg.alt = c.title;
+    cfRightImg.src = r.img;
+    cfRightImg.alt = r.title;
+    cfTitle.textContent = c.title;
+    cfTag.textContent = c.tag;
+  }
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      current = tab.dataset.cat;
+      index = 0;
+      renderSlides();
+      restartAutoplay();
+    });
+  });
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    const len = portfolioData[current].length;
+    index = (index + 1) % len;
+    renderSlides();
+    restartAutoplay();
+  });
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    const len = portfolioData[current].length;
+    index = (index - 1 + len) % len;
+    renderSlides();
+    restartAutoplay();
+  });
+  cfLeft.addEventListener('click', () => { document.getElementById('prevBtn').click(); });
+  cfRight.addEventListener('click', () => { document.getElementById('nextBtn').click(); });
+  renderSlides();
+
+  // Auto-slide every few seconds, pausing on hover/touch
+  let autoplayTimer = null;
+  function startAutoplay(){
+    autoplayTimer = setInterval(() => {
+      const len = portfolioData[current].length;
+      index = (index + 1) % len;
+      renderSlides();
+    }, 3500);
+  }
+  function stopAutoplay(){ clearInterval(autoplayTimer); }
+  function restartAutoplay(){ stopAutoplay(); startAutoplay(); }
+  const coverflowEl = document.getElementById('coverflow');
+  coverflowEl.addEventListener('mouseenter', stopAutoplay);
+  coverflowEl.addEventListener('mouseleave', startAutoplay);
+  coverflowEl.addEventListener('touchstart', stopAutoplay, { passive: true });
+  startAutoplay();
+
+  // Lightbox zoom for center slide
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxTag = document.getElementById('lightboxTag');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  function openLightbox(){
+    const c = portfolioData[current][index];
+    lightboxImg.src = c.img;
+    lightboxImg.alt = c.title;
+    lightboxTitle.textContent = c.title;
+    lightboxTag.textContent = c.tag;
+    lightbox.classList.add('open');
+    stopAutoplay();
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    startAutoplay();
+  }
+  cfCenter.addEventListener('click', openLightbox);
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
